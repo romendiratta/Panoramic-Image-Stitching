@@ -3,6 +3,8 @@ function EBB_matches = getEBBHarrisMatches(img, img2)
 ebb_corners_output = detectEBBHarrisFeatures(img);
 ebb_corners_output2 = detectEBBHarrisFeatures(img2);
 
+disp(ebb_corners_output.Location);
+
 ebb_corners = cornerPoints(ebb_corners_output.Location,'Metric',ebb_corners_output.Metric);
 ebb_corners2 = cornerPoints(ebb_corners_output2.Location,'Metric',ebb_corners_output2.Metric);
 
