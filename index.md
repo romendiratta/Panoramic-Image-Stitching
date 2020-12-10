@@ -2,7 +2,7 @@
 #### By Rohan Mendiratta, Andrew Degler, Andrew Schaeffer
 ##### UW-Madison: CS639 Fall 2020
 
-<br></br>
+<br>
 
 ### Introduction
 Panorama stitching has gained widespread exposure in recent years due to its implementation on the iPhone and other handheld devices. Existing algorithms work well in good conditions but can face difficulties with non-standard datasets that contain changes in contrast (Wei et al., 2019). In particular, popular algorithms that use handcrafted features for keypoint detection such as SIFT and FAST can fail to detect an adequate amount of features in low contrast images and images with low contrast regions (Lentilucci et al., 2018). In order to improve image stitching with low contrast images, we will test two new keypoint detection algorithms and gauge their performance.
@@ -15,12 +15,12 @@ The benefit of this approach is twofold. First, noise can still be reduced by re
 Our group implemented the EBB-HCD algorithm in Matlab. The image below has been run through the algorithm.
 
 <img src="./resources/ebb-harris-blocks.png">
-<br></br>
+<br>
 
 This is the same image but using the SURF algorithm. The keypoints on this image are more concentrated compared to the EBB-HCD.
 
 <img src="./resources/surf-high-contrast.png">
-<br></br>
+<br>
 
 If we lower the contrast, SURF detects far fewer keypoints.
 
@@ -30,17 +30,17 @@ If we lower the contrast, SURF detects far fewer keypoints.
 In 2019, Mikolajczyk et. all proposed Key.Net, a neural network that combines both handcrafted and learned features. The goal of the architecture is to capture the benefits of CNNs that have been demonstrated for keypoint detection while improving on repeatability by including engineered features.
 
 <img src="./resources/cnn.png">
-<br></br>
+<br>
 
 Our group ran Key.Net. Below are the keypoints detected.
 
 <img src="./resources/key-net-high-contrast.png">
-<br></br>
+<br>
 
 These are the keypoints detected when the image contrast is lowered.
 
 <img src="./resources/key-net-low-contrast.png">
-<br></br>
+<br>
 
 ### Experiment
 We tested SIFT, SURF, Harris, EBB-Harris, and Key.Net to see which keypoint detection algorithm can produce the best panoramas under low contrast. We use backward warping to calculate the homography matrix and RANSAC with 15000 iterations and an error tolerance threshold of 1.
@@ -48,38 +48,38 @@ We tested SIFT, SURF, Harris, EBB-Harris, and Key.Net to see which keypoint dete
 We define contrast as the difference between the highest intensity value and the lowest intensity value. Images with high contrast have intensity values that span the entire range from 0 to 255. The image below is an example of a high intensity image.
 
 <img src="./resources/high-contrast-demo.png"/>
-<br></br>
+<br>
 <img src="./resources/hist-high-intensity.png"/>
-<br></br>
+<br>
 
 The intensity values for this image are mapped to a smaller range and result in a lower contrast.
 
 <img src="./resources/low-contrast-demo.png"/>
-<br></br>
+<br>
 <img src="./resources/hist-low-intensity.png"/>
-<br></br>
+<br>
 
 ### Results
 Each keypoint detection algorithm is able to generate a panorama for images with the full range of intensities.
 
 <img src="./resources/full-contrast-1.png"/>
 <img src="./resources/full-contrast-2.png"/>
-<br></br>
+<br>
 
 However, there starts to be some odd stitching if the contrast is lowered by mapping the intensity values to a smaller range. Here is a panorama generated with Harris corners at the lower contrast.
 
 <img src="./resources/harris-broken-0.25.png"/>
-<br></br>
+<br>
 
 If we lower the contrast further, both SURF and Harris fail to stitch together the panorama. This is an example of a panorama stitched using keypoints detected by Key.Net at a much lower contrast.
 
 <img src="./resources/key-net-0.45-0.55.png"/>
-<br></br>
+<br>
 
 The only two keypoint detection methods that were able to successfully stitch the panorama at very low contrast levels were EBB-Harris and SIFT.
 
 <img src="./resources/low_contrast_combined.jpg "/>
-<br></br>
+<br>
 
 ### Results
 
