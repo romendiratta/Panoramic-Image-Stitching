@@ -1,0 +1,9 @@
+Skeleton code for panorama stitching and SIFT implementation
+
+- CS 639, UW-Madison
+- 12/10/20
+
+Tile.m for splitting image into blocks 
+
+- Ian Howat, Ohio State University
+- 12/10/20
