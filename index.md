@@ -1,7 +1,9 @@
 
+##### UW-Madison: CS639 Fall 2020
+# Panoramic Image Stitching with Low Contrast Images
 #### By Rohan Mendiratta, Andrew Degler, Andrew Schaeffer
 #### <a href="http://github.com/romendiratta/Panoramic-Image-Stitching">View Repository</a>
-##### UW-Madison: CS639 Fall 2020
+#### <a href="http://www.youtube.com/watch?v=7aTcRcI2Zxg&feature=youtu.be">View Presentation</a>
 
 
 <br>
@@ -88,3 +90,11 @@ SIFT was the best performing algorithm; EBB-Harris also performed well on very l
 Future experimentation could involve the optimization of feature extraction and matching, along with incorporating EBB-Harris elements such as entropy in order to gain a more even distribution of keypoints with Key.Net.
 
 <img src="./resources/final-results.png"/>
+
+### **References**
+Wei, L., Zhong, Z., Lang, C., & Yi, Z. (2019).<br>
+<cite>A survey on image and video stitching. Virtual Reality and Intelligent Hardware, 1(1), 55-83.</cite>
+
+Lentilucci, E. J., Voisin, S., & Sun, Y. (2018). <br> <cite>Auto-adaptive Harris corner detection algorithm based on entropy-improved block processing. Florida: Algorithms and Technologies for Multispectral, Hyperspectral, and Ultraspectral Imagery XXIV.</cite>
+
+Laguna, A. B., Riba, E., Ponsa, D., &amp; Mikolajczyk, K. (2019).<br> <cite>Key.Net: Keypoint Detection by Handcrafted and Learned CNN Filters. 2019 IEEE/CVF International Conference on Computer Vision (ICCV). doi:10.1109/iccv.2019.00593</cite>
